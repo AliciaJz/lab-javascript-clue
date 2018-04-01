@@ -10,7 +10,7 @@ var charactersArray = [
         occupation: "Entrepreneur"
     },
     
-     {
+    {
         first_name: "Doctor",
         last_name: "Orchid",
         color: "white",
@@ -20,7 +20,7 @@ var charactersArray = [
         occupation: "Scientist"
     },
     
-     {
+    {
         first_name: "Victor",
         last_name: "Plum",
         color: "purple",
@@ -30,7 +30,7 @@ var charactersArray = [
         occupation: "Designer"
     },
     
-     {
+    {
         first_name: "Kasandra",
         last_name: "Scarlet",
         color: "red",
@@ -156,17 +156,16 @@ var charactersArray = [
         return array[Math.floor(Math.random()*array.length)];
     }
     
-    function pickMistery(array1, array2, array3) {
-        var misteryEnvelope = [];
-        misteryEnvelope.push(randomSelector(array1));
-        misteryEnvelope.push(randomSelector(array2));
-        misteryEnvelope.push(randomSelector(array3));
-        return misteryEnvelope;
+    function pickMistery(){
+        var randomCharacter = randomSelector(charactersArray);
+        var randomWeapon = randomSelector(weaponsArray);
+        var randomRoom = randomSelector(roomsArray);
+        return [randomCharacter, randomWeapon, randomRoom];
     }
+
+    var misteryEnvelope = pickMistery()
     
-    function revealMistery (arr) {
-       console.log(arr[0].first_name + " " + arr[0].last_name + " killed Mr. Boddy using the " + arr[1].name + " in the " + arr[2].name + "!!!");
+    function revealMistery(array){
+    
+        return array[0].first_name + " " + array[0].last_name + " killed Mr.Boddy using the " + array[1].name + " in the " + array[2].name + "!!!!";
     }
-    
-    revealMistery(pickMistery(charactersArray,weaponsArray,roomsArray));
-        
